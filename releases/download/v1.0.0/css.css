@@ -1,0 +1,557 @@
+/* Сброс стилей и базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Основное тело */
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 100px;
+    background: #000;
+    color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar */
+.navbar {
+    position: fixed;
+    top: 20px; /* Отступ от верхней части страницы */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* Уменьшенная ширина */
+    max-width: 1000px; /* Максимальная ширина */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    padding: 8px 20px;
+    z-index: 9999;
+    border-radius: 24px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+    transition: all 0.3s ease;
+}
+
+/* Контейнер внутри навбара */
+.navbar-container {
+    width: 90%;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.95);
+    border-radius: 24px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+}
+
+.navbar .logo {
+    width: 50px;
+    height: auto;
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 8px;
+}
+
+.navbar .menu a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+}
+
+.navbar .menu a:hover {
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.navbar .cta-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.navbar .cta-buttons a {
+    color: white;
+    text-decoration: none;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.navbar .cta-buttons a:last-child {
+    background: #fff;
+    color: #000;
+}
+
+.navbar .cta-buttons a:hover {
+    transform: translateY(-2px);
+}
+
+/* Glow эффект при прокрутке */
+.navbar.glow {
+    background: rgba(0, 0, 0, 0.9);
+    box-shadow: 0 0 10px 3px rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+}
+
+/* Кнопки */
+button {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    box-shadow: 0 0px 8px rgb(255, 255, 255);
+}
+
+/* Ввод */
+input, textarea {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border-radius: 10px;
+    width: 100%;
+    max-width: 400px;
+    outline: none;
+    margin: 10px 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 0px 5px rgba(255, 255, 255, 0.1);
+}
+
+input:focus, textarea:focus {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0px 8px rgba(255, 255, 255, 0.5);
+}
+
+/* Карточки */
+.card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 25px;
+    margin: 20px;
+    box-shadow: 0 5px 15px rgba(177, 177, 177, 0.4);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0px 15px rgba(255, 255, 255, 0.8);
+}
+.card-title {
+    font-weight: bold;
+    margin: 5px 0;
+    font-size: 24px;
+    color: white;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Отступ между всеми элементами внутри карточки */
+}
+
+.card-text {
+    margin-bottom: 10px; /* Дополнительный отступ перед кнопкой */
+}
+
+.card-link {
+    display: inline-block; /* Чтобы ссылка занимала только нужное пространство */
+    width: fit-content; /* Ширина по содержимому */
+    margin-top: auto; /* Прижимает кнопку к низу, если есть свободное место */
+}
+
+/* Заголовки */
+h1, h2, h3 {
+    text-align: center;
+    margin: 20px 0;
+    text-shadow: 0 0px 8px rgba(255, 255, 255, 0.5);
+    font-weight: 700;
+    animation: glow 1.5s infinite alternate;
+}
+
+/* Glow анимация */
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 3px rgba(255, 255, 255, 0.7), 0 0 4px rgba(255, 255, 255, 0.5);
+    }
+    100% {
+        text-shadow: 0 0 3px rgba(255, 255, 255, 1), 0 0 4px rgba(255, 255, 255, 0.8);
+    }
+}
+
+/* Адаптация */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+
+    .card {
+        margin: 10px 0;
+    }
+
+    button {
+        width: 100%;
+        padding: 15px;
+    }
+
+    input, textarea {
+        max-width: 100%;
+    }
+
+    .navbar {
+        padding: 12px 16px;
+        width: 95%;
+        top: 10px;
+    }
+    
+    .navbar .menu {
+        display: none; /* Можно добавить мобильное меню */
+    }
+}
+
+/* Обложка и кнопка */
+.cover {
+        width: 100%;
+        height: 200px; /* Увеличил высоту обложки */
+        object-fit: cover;
+        border-radius: 5px;
+        margin-bottom: 10px;
+}
+
+.button-link {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+.button-link:hover {
+    box-shadow: 0 0px 8px rgb(255, 255, 255);
+}
+
+/* Основной контейнер */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 50px auto;
+    padding: 0 40px;
+}
+
+/* Заголовок и описание */
+h1 {
+    font-size: 48px;
+    text-align: center;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #fff, #a5a5a5);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+/* Описание */
+.main-description {
+    text-align: center;
+    font-size: 18px;
+    color: rgba(255, 255, 255, 0.7);
+    margin-bottom: 60px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Динамическая сетка компонентов */
+.components-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 10px;
+    padding: 10px 0;
+    width: 100%;
+    align-items: start;
+}
+
+/* Секции компонентов */
+.component-section {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 24px;
+    padding: 20px;
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.component-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Заголовки секций */
+.component-section h2 {
+    font-size: 28px;
+    color: #fff;
+    margin-bottom: 15px;
+    text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+/* Описания секций */
+.section-description {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 30px;
+}
+
+/* Демо-блоки с автоматической высотой */
+.demo-block {
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: flex-start;
+    height: auto; /* Автоматическая высота */
+}
+
+/* Стили для полей ввода */
+input, textarea {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 12px 16px;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+    outline: none;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .components-grid {
+        grid-template-columns: 1fr; /* На мобильных - одна колонка */
+    }
+    
+    .component-section {
+        margin: 0; /* Убираем отступы на мобильных */
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1200px) {
+    .components-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media (min-width: 1201px) {
+    .components-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+/* Добавляем стили для правильного отображения при прокрутке */
+html {
+    scroll-padding-top: 100px; /* Для правильной прокрутки к якорям */
+}
+
+
+/* Меню навбара */
+.a-text{
+    text-decoration: none;
+    color: white;
+}
+
+.menu-link {
+    color: inherit; /* Наследует цвет текста */
+    text-decoration: none; /* Убирает подчеркивание */
+    font-size: 16px; /* Размер шрифта */
+    font-weight: normal; /* Обычный вес шрифта */
+    padding: 0; /* Убирает отступы */
+    transition: none; /* Убирает анимации */
+}
+
+.menu-link:hover {
+    text-decoration: underline; /* Подчеркивание при наведении */
+}
+
+
+/* Стили для прогресс-баров */
+
+/* Плоский прогресс-бар */
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Анимация для плоского прогресс-бара */
+@keyframes loading {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, rgb(255, 255, 255), rgba(255,255,255,0.6));
+    border-radius: 10px;
+    transition: width 0.3s ease;
+    position: relative;
+    animation: loading 2s infinite;
+}
+
+.progress-bar-fill::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Круглый прогресс-бар */
+.circular-progress {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.circular-progress::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: conic-gradient(
+        rgba(255, 255, 255, 0.8) var(--angle), 
+        transparent 0deg
+        
+    );
+    animation: rotate 2s linear infinite;
+    mask: radial-gradient(transparent 65%, black 66%);
+    -webkit-mask: radial-gradient(transparent 65%, black 66%);
+}
+
+.progress-value {
+    position: relative;
+    font-size: 24px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Эффекты свечения */
+.circular-progress:hover::before {
+    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5));
+}
+
+/* Анимация вращения */
+@keyframes rotate {
+    from {
+        --angle: 0deg;
+    }
+    to {
+        --angle: 360deg;
+    }
+}
+
+@property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+}
+
+/* Центрирование контейнера */
+.center-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Занимает всю высоту экрана */
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Убедитесь, что у других элементов нет лишних отступов */
+h1, .download-container {
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Контейнер загрузки */
+.download-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Отступ между элементами */
+    margin-top: 20px; /* Отступ сверху */
+}
+
+/* Кнопки */
+.button-link {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    color: white;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    margin: 5px 0; /* Отступ между кнопками */
+}
+
+.button-link:hover {
+    box-shadow: 0 0px 8px rgb(255, 255, 255);
+}
+
+/* Текст */
+.download-container p {
+    margin: 5px 0; /* Отступ между текстовыми элементами */
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 14px;
+    text-align: center;
+}
+
+
